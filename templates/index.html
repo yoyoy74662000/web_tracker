@@ -1,1 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>Top 20 基金查詢工具</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Tahoma, sans-serif;
+      background: linear-gradient(to right, #f0f8ff, #dcefff);
+      margin: 0;
+      padding: 0;
+    }
 
+    .container {
+      max-width: 900px;
+      margin: 80px auto;
+      background-color: white;
+      padding: 80px 60px;
+      border-radius: 30px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    h1 {
+      text-align: center;
+      color: #222;
+      font-size: 56px;
+      margin-bottom: 60px;
+    }
+
+    form {
+      margin-bottom: 60px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 30px;
+      font-weight: bold;
+      font-size: 36px;
+      color: #333;
+    }
+
+    select {
+      width: 100%;
+      padding: 30px;
+      border-radius: 16px;
+      border: 2px solid #aaa;
+      font-size: 32px;
+      margin-bottom: 40px;
+    }
+
+    button {
+      width: 100%;
+      background-color: #007bff;
+      color: white;
+      padding: 30px;
+      font-size: 36px;
+      font-weight: bold;
+      border: none;
+      border-radius: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .footer {
+      text-align: center;
+      font-size: 24px;
+      color: #666;
+      margin-top: 60px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Top 20 基金查詢</h1>
+
+    <form method="POST" action="/download">
+      <label for="period-download">選擇期間下載 Excel：</label>
+      <select id="period-download" name="period" required>
+        <option value="一個月">一個月</option>
+        <option value="三個月">三個月</option>
+        <option value="六個月">六個月</option>
+        <option value="一年">一年</option>
+      </select>
+      <button type="submit">📥 下載 Excel</button>
+    </form>
+
+    <form method="POST" action="/send">
+      <label for="period-send">選擇期間傳送至 Telegram：</label>
+      <select id="period-send" name="period" required>
+        <option value="一個月">一個月</option>
+        <option value="三個月">三個月</option>
+        <option value="六個月">六個月</option>
+        <option value="一年">一年</option>
+      </select>
+      <button type="submit">📤 傳送至 Telegram</button>
+    </form>
+
+    <div class="footer">
+      &copy; 2025 製作人 Daniel｜資料來源：MoneyDJ
+    </div>
+  </div>
+
+</body>
+</html>
